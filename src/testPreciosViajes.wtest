@@ -1,77 +1,83 @@
+/*
+ * Test: Bien, te corregí los test para que corran por el argumento innecesario
+ * (remisera) que vimos en el código de la solución. Tal vez faltó testear el método
+ * intercambiar remiseras para que puedas ver el error que te marcamos en el código.
+ */
+
 import remiseras.*
 import clientes.*
 import cooperativa.*
 
 test "test viajes roxana 10km" {
-	assert.equals(180, roxana.precioViaje(ludmila, 10, roxana))
-	assert.equals(300, roxana.precioViaje(anaMaria, 10, roxana))
-	assert.equals(220, roxana.precioViaje(teresa, 10, roxana))
+	assert.equals(180, roxana.precioViaje(ludmila, 10))
+	assert.equals(300, roxana.precioViaje(anaMaria, 10))
+	assert.equals(220, roxana.precioViaje(teresa, 10))
 }
 
 test "test viajes gabriela 10km" {
-	assert.equals(216, gabriela.precioViaje(ludmila, 10, gabriela))
-	assert.equals(360, gabriela.precioViaje(anaMaria, 10, gabriela))
-	assert.equals(264, gabriela.precioViaje(teresa, 10, gabriela))
+	assert.equals(216, gabriela.precioViaje(ludmila, 10))
+	assert.equals(360, gabriela.precioViaje(anaMaria, 10))
+	assert.equals(264, gabriela.precioViaje(teresa, 10))
 }
 
 test "test viajes mariela 10km" {
-	assert.equals(180, mariela.precioViaje(ludmila,10, mariela))
-	assert.equals(300, mariela.precioViaje(anaMaria,10, mariela))
-	assert.equals(220, mariela.precioViaje(teresa,10, mariela))
+	assert.equals(180, mariela.precioViaje(ludmila,10))
+	assert.equals(300, mariela.precioViaje(anaMaria,10))
+	assert.equals(220, mariela.precioViaje(teresa,10))
 }
 
 test "test viajes juana 10km" {
-	assert.equals(200, juana.precioViaje(ludmila,10, juana))
-	assert.equals(200, juana.precioViaje(anaMaria,10, juana))
-	assert.equals(200, juana.precioViaje(teresa,10, juana))
+	assert.equals(200, juana.precioViaje(ludmila,10))
+	assert.equals(200, juana.precioViaje(anaMaria,10))
+	assert.equals(200, juana.precioViaje(teresa,10))
 }
 
 test "test viajes roxana 2km" {
-	assert.equals(36, roxana.precioViaje(ludmila,2, roxana))
-	assert.equals(60, roxana.precioViaje(anaMaria,2, roxana))
-	assert.equals(44, roxana.precioViaje(teresa,2, roxana))
+	assert.equals(36, roxana.precioViaje(ludmila,2))
+	assert.equals(60, roxana.precioViaje(anaMaria,2))
+	assert.equals(44, roxana.precioViaje(teresa,2))
 }
 
 test "test viajes gabriela 2km" {
-	assert.equals(43.20, gabriela.precioViaje(ludmila,2, gabriela))
-	assert.equals(72, gabriela.precioViaje(anaMaria,2, gabriela))
-	assert.equals(52.80, gabriela.precioViaje(teresa,2, gabriela))
+	assert.equals(43.20, gabriela.precioViaje(ludmila,2))
+	assert.equals(72, gabriela.precioViaje(anaMaria,2))
+	assert.equals(52.80, gabriela.precioViaje(teresa,2))
 }
 
 test "test viajes mariela 2km" {
-	assert.equals(50, mariela.precioViaje(ludmila,2, mariela))
-	assert.equals(60, mariela.precioViaje(anaMaria,2, mariela))
-	assert.equals(50, mariela.precioViaje(teresa,2, mariela))
+	assert.equals(50, mariela.precioViaje(ludmila,2))
+	assert.equals(60, mariela.precioViaje(anaMaria,2))
+	assert.equals(50, mariela.precioViaje(teresa,2))
 }
 
 test "test viajes juana 2km" {
-	assert.equals(100, juana.precioViaje(ludmila,2,juana))
-	assert.equals(100, juana.precioViaje(anaMaria,2,juana))
-	assert.equals(100, juana.precioViaje(teresa,2,juana))
+	assert.equals(100, juana.precioViaje(ludmila,2))
+	assert.equals(100, juana.precioViaje(anaMaria,2))
+	assert.equals(100, juana.precioViaje(teresa,2))
 }
 
 test "reemplazo lucia con mariela 10km" {
 	lucia.reemplazar(mariela)
 	melina.trabajarPara(ludmila)
-	assert.equals(150, lucia.precioViaje(melina,10,mariela))
+	assert.equals(150, lucia.precioViaje(melina,10))
 }
 
 test "reemplazo lucia con mariela 1km" {
 	lucia.reemplazar(mariela)
 	melina.trabajarPara(ludmila)
-	assert.equals(50, lucia.precioViaje(melina,1,mariela))
+	assert.equals(50, lucia.precioViaje(melina,1))
 }
 
 test "reemplazo lucia con gabriela 10km" {
 	lucia.reemplazar(gabriela)
 	melina.trabajarPara(ludmila)
-	assert.equals(180, lucia.precioViaje(melina,10,gabriela))
+	assert.equals(180, lucia.precioViaje(melina,10))
 }
 
 test "reemplazo lucia con gabriela 1km" {
 	lucia.reemplazar(gabriela)
 	melina.trabajarPara(ludmila)
-	assert.equals(18, lucia.precioViaje(melina,1,gabriela))
+	assert.equals(18, lucia.precioViaje(melina,1))
 }
 
 test "Asignacion de remiseras y prueba de eleccion" {
@@ -80,17 +86,4 @@ test "Asignacion de remiseras y prueba de eleccion" {
 	assert.equals(roxana, oficina.remiseraElegidaParaViaje(teresa,10))
 	assert.equals(roxana, oficina.remiseraElegidaParaViaje(teresa,4))
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
